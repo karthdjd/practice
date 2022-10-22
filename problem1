@@ -1,0 +1,15 @@
+module top_module(
+    input a,
+    input b,
+    input c,
+    input d,
+    output out,
+    output out_n   ); 
+    wire a1,c1,out1;
+    and(a1,a,b);
+    and(c1,c,d);
+    or(out1,a1,c1);
+    assign out=out1;
+    assign out_n=!out1;
+
+endmodule
