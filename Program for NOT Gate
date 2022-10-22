@@ -1,0 +1,22 @@
+module notgate;
+reg A;
+wire Y;
+notg andgate(.A(A),.Y(Y));
+initial begin
+ 
+#10 A =1'b0;
+#10 A =1'b1;
+
+$finish;
+end
+always @(Y)
+$display( "time =%0t \tINPUT VALUES: \t A=%b  \t output value Y =%b",$time,A,Y);
+endmodule
+
+DESIGN PROGRAM
+
+module notg(A, Y);
+input A, B;
+output Y;
+assign Y = !A;
+endmodule
